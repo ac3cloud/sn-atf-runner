@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    atf-runner:
+        build: ./
+        image: atf-runner
+        container_name: atf-runner
+        init: true
+        restart: always
+        volumes:
+            - ./data:/data
+        environment:
+            - NODE_ENV=production
+        env_file:
+            - .env
