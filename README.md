@@ -6,7 +6,7 @@ Dockerised Automated Test Framework runner for ServiceNow
 Create `.env` file and populate with the following variables:
 
 ```
-SN_INSTANCE_NAME=bpfaudev
+SN_INSTANCE_NAME=example
 SN_USERNAME=user
 SN_PASSWORD=pass
 RUNNER_SCHEDULED=true
@@ -22,6 +22,8 @@ docker-compose build
 
 You should now be able to run the container either in the foreground `docker-compose up` or background `docker-compose up -d`.
 
-* To follow logs, you can run `docker logs -f atf-runner`
+* The container will be named based on the `SN_INSTANCE_NAME` variable, e.g. `atf-runner:example`. This allows you to identify different test runners for different environments
+* To confirm the correct name, run `docker ps`
+* To follow logs, you can run `docker logs -f atf-runner:example`, replacing with the actual name
 * To shutdown and remove the container, run `docker-compose down`
 * If you make changes to the app for testing, you will need to re-build the image, run `docker-compose down && docker-compose up --build`
