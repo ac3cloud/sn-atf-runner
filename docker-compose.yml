@@ -11,4 +11,4 @@ services:
             - NODE_ENV=production
         env_file:
             - .env
-        container_name: atf-runner:${SN_INSTANCE_NAME}
+        container_name: atf-runner-${SN_INSTANCE_NAME}

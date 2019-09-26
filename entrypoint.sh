@@ -48,4 +48,4 @@ sed -i "/RUNNER_SCHEDULED/c\   \"RUNNER_SCHEDULED\" : \"$RUNNER_SCHEDULED\"" /ap
     cp ./process-default.json /data/process.json && ln -s "/data/process.json" ./process.json
 # fi
 
-pm2 start process.json --no-daemon
+pm2-runtime process.json

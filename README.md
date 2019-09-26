@@ -22,8 +22,8 @@ docker-compose build
 
 You should now be able to run the container either in the foreground `docker-compose up` or background `docker-compose up -d`.
 
-* The container will be named based on the `SN_INSTANCE_NAME` variable, e.g. `atf-runner:example`. This allows you to identify different test runners for different environments
+* The container will be named based on the `SN_INSTANCE_NAME` variable, e.g. `atf-runner-example`. This allows you to identify different test runners for different environments
 * To confirm the correct name, run `docker ps`
-* To follow logs, you can run `docker logs -f atf-runner:example`, replacing with the actual name
+* To follow logs, you can run `docker logs -f atf-runner-example`, replacing with the actual name
 * To shutdown and remove the container, run `docker-compose down`
 * If you make changes to the app for testing, you will need to re-build the image, run `docker-compose down && docker-compose up --build`

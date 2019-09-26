@@ -14,6 +14,10 @@ ADD . /app
 
 WORKDIR /app
 
+VOLUME ["/data"]
+
+EXPOSE 3000
+
 RUN npm install pm2@latest -g
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
@@ -24,13 +28,10 @@ RUN npm i puppeteer \
     && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
     && chown -R pptruser:pptruser /home/pptruser \
-    && chown -R pptruser:pptruser /app
-
-VOLUME ["/data"]
-
-EXPOSE 3000
+    && chown -R pptruser:pptruser /app \
+    && chown -R pptruser:pptruser /data
 
 # Run everything after as non-privileged user.
 USER pptruser
 
-CMD ["sh","/app/entrypoint.sh"]
+CMD ["sh", "/app/entrypoint.sh"]
