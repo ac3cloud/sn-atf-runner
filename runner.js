@@ -50,9 +50,15 @@ puppeteer.launch(pOpts).then(async browser => {
   // if strange issues are experienced, uncomment this and the other screenshot commands to see what's actually happening
   // await page.screenshot({fullPage: true, path: 'login.png'});
 
-  // find the iframe that contains the login form, because it wouldn't be a SNow script without an eternal battle with frames
-  var frames = await page.frames();
-  var loginFrame = frames.find(f => f.url().indexOf("welcome.do") > 0);
+  var loginFrame;
+  if (process.env.SIDE_DOOR && process.env.SIDE_DOOR == 'true') {
+    // find the iframe that contains the login form, because it wouldn't be a SNow script without an eternal battle with frames
+    var frames = await page.frames();
+    loginFrame = frames.find(f => f.url().indexOf("welcome.do") > 0);
+  } else {
+    // if we're using welcome.do, there's no frame, so the loginFrame is the page itself
+    loginFrame = page;
+  }
 
   // wait for the css selector to become visible before proceeding
   if (await loginFrame.$('#loginPage') !== null) {
