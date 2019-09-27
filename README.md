@@ -3,14 +3,14 @@ Dockerised Automated Test Framework runner for ServiceNow
 
 # Setup
 
-Create `.env` file and populate with the following variables:
+Create `.env` file (or copy `.env-example`) and populate the variables:
 
 ```
 SN_INSTANCE_NAME=example
 SN_USERNAME=user
 SN_PASSWORD=pass
-RUNNER_SCHEDULED=true
-SIDE_DOOR=true
+RUNNER_SCHEDULED=true|false
+SIDE_DOOR=true|false
 ```
 * `SN_INSTANCE_NAME` should be the unique part of your instance URL, e.g. if your URL is https://example.service-now.com/, then `SN_INSTANCE_NAME=example`
 * `SN_USERNAME` and `SN_PASSWORD` are the credentials for the user that will be running the tests. Ensure this user has sufficient permissions to run tests
