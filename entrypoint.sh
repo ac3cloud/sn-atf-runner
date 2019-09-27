@@ -48,11 +48,7 @@ sed -i "/RUNNER_SCHEDULED/c\   \"RUNNER_SCHEDULED\" : \"$RUNNER_SCHEDULED\"," /a
 sed -i "/SIDE_DOOR/c\   \"SIDE_DOOR\" : \"$SIDE_DOOR\"" /app/process-default.json
 
 ## Create default process.json file for pm2 server
-## Uncomment below if you wish to have changes to process.json persist
-# if [ -f /data/process.json ]; then
-#     ln -s "/data/process.json" ./process.json
-# else
-    cp ./process-default.json /data/process.json && ln -s "/data/process.json" ./process.json
-# fi
+## Comment out this line if you wish to have changes to process.json persist
+cp ./process-default.json ./process.json
 
 pm2-runtime process.json

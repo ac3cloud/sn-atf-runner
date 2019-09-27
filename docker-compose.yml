@@ -5,8 +5,6 @@ services:
         image: atf-runner
         init: true
         restart: always
-        volumes:
-            - ./data:/data
         environment:
             - NODE_ENV=production
         env_file:

@@ -3,8 +3,8 @@
   "cwd"              : "/app",
   "script"           : "runner.js",
   "node_args"        : ["--harmony"],
-  "error_file"       : "../data/logs/node-app.stderr.log",
-  "out_file"         : "../data/logs/node-app.stdout.log",
+  "error_file"       : "./logs/node-app.stderr.log",
+  "out_file"         : "./logs/node-app.stdout.log",
   "pid_file"         : "pids/node-geo-api.pid",
   "instances"        : 1, //or 0 => 'max'
   "min_uptime"       : "200s", // 200 seconds, defaults to 1000
