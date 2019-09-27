@@ -34,7 +34,7 @@ fi
 
 if [ -z "$SIDE_DOOR" ]; then
   echo "SIDE_DOOR was not set -- Defaulting to true"
-  SIDE_DOOR=true
+  SIDE_DOOR=false
 fi
 
 

@@ -23,6 +23,7 @@
     "SN_INSTANCE_NAME": "example",
     "SN_USERNAME": "username",
     "SN_PASSWORD": "password",
-    "RUNNER_SCHEDULED": "true"
+    "RUNNER_SCHEDULED": "true",
+    "SIDE_DOOR": "false"
   }
 }
