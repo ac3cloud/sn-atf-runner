@@ -13,7 +13,12 @@ var pOpts = {
 }
 
 // env variables populating the url and credentials
-var loginUrl = 'https://'+process.env.SN_INSTANCE_NAME+'.service-now.com/side_door.do';
+var loginUrl;
+if (process.env.SIDE_DOOR && SIDE_DOOR == 'true') {
+  loginUrl = 'https://'+process.env.SN_INSTANCE_NAME+'.service-now.com/side_door.do';
+} else {
+  loginUrl = 'https://'+process.env.SN_INSTANCE_NAME+'.service-now.com/welcome.do';
+}
 var atfUrl;
 if (process.env.RUNNER_SCHEDULED && process.env.RUNNER_SCHEDULED == 'true') {
   atfUrl = 'https://'+process.env.SN_INSTANCE_NAME+'.service-now.com/atf_test_runner.do?sysparm_scheduled_tests_only=true';

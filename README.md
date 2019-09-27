@@ -10,10 +10,12 @@ SN_INSTANCE_NAME=example
 SN_USERNAME=user
 SN_PASSWORD=pass
 RUNNER_SCHEDULED=true
+SIDE_DOOR=true
 ```
 * `SN_INSTANCE_NAME` should be the unique part of your instance URL, e.g. if your URL is https://example.service-now.com/, then `SN_INSTANCE_NAME=example`
 * `SN_USERNAME` and `SN_PASSWORD` are the credentials for the user that will be running the tests. Ensure this user has sufficient permissions to run tests
 * `RUNNER_SCHEDULED` should be set to `true` if you want the test runner to be for scheduled tests. This should be the case in most scenarios. If you do want to use the runner for manual tests, ensure that the username and password is the same user that will be executing the tests.
+* `SIDE_DOOR` should be set to `true` if you use SAML and need to come in through the side_door.do URL. If `false`, welcome.do is used.
 
 Build the container:
 ```
