@@ -14,7 +14,7 @@ var pOpts = {
 
 // env variables populating the url and credentials
 var loginUrl;
-if (process.env.SIDE_DOOR && SIDE_DOOR == 'true') {
+if (process.env.SIDE_DOOR && process.env.SIDE_DOOR == 'true') {
   loginUrl = 'https://'+process.env.SN_INSTANCE_NAME+'.service-now.com/side_door.do';
 } else {
   loginUrl = 'https://'+process.env.SN_INSTANCE_NAME+'.service-now.com/welcome.do';
