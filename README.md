@@ -1,5 +1,7 @@
 # sn-atf-runner
-Dockerised Automated Test Framework runner for ServiceNow
+Dockerised Automated Test Framework runner for ServiceNow. This service persistently holds a session in ServiceNow's 'scheduled test runner' window through the use of [Puppeteer](https://github.com/GoogleChrome/puppeteer) - a wrapper for headless Google Chrome.
+
+The script logs in through the main login page or side_door if you are using SAML, then navigates to the runner page and waits for a test to start.
 
 # Setup
 
