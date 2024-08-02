@@ -1,3 +1,5 @@
+**Note:** This utility is redundant now that ServiceNow have built an out of box solution for running ATF using a headless browser. Search their documentation for _Headless Browser for Automated Test Framework_
+
 # sn-atf-runner
 Dockerised Automated Test Framework runner for ServiceNow. This service persistently holds a session in ServiceNow's 'scheduled test runner' window through the use of [Puppeteer](https://github.com/GoogleChrome/puppeteer) - a wrapper for headless Google Chrome.
 
